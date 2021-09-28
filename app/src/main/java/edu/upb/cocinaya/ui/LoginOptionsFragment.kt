@@ -1,0 +1,18 @@
+package edu.upb.cocinaya.ui
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import edu.upb.cocinaya.R
+
+class LoginOptionsFragment: Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.fagment_login_options, container, false)
+    }
+}
