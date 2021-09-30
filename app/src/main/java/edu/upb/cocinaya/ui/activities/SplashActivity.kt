@@ -1,9 +1,10 @@
-package edu.upb.cocinaya
+package edu.upb.cocinaya.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import edu.upb.cocinaya.R
 
 class SplashActivity : AppCompatActivity() {
 

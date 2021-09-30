@@ -14,28 +14,28 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/terms_and_conditions"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDecline"
+        app:layout_constraintBottom_toTopOf="@+id/btDecline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/button_background" />
 
     <ImageView
-        android:id="@+id/imageViewDecline"
+        android:id="@+id/btDecline"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewAccept"
+        app:layout_constraintEnd_toStartOf="@+id/btAccept"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/button_background" />
 
     <ImageView
-        android:id="@+id/imageViewAccept"
+        android:id="@+id/btAccept"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewDecline"
+        app:layout_constraintStart_toEndOf="@+id/btDecline"
         app:srcCompat="@drawable/button_background_primary" />
 
     <TextView
@@ -53,10 +53,10 @@
         android:layout_height="wrap_content"
         android:text="Decline"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewDecline"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewDecline"
-        app:layout_constraintStart_toStartOf="@+id/imageViewDecline"
-        app:layout_constraintTop_toTopOf="@+id/imageViewDecline" />
+        app:layout_constraintBottom_toBottomOf="@+id/btDecline"
+        app:layout_constraintEnd_toEndOf="@+id/btDecline"
+        app:layout_constraintStart_toStartOf="@+id/btDecline"
+        app:layout_constraintTop_toTopOf="@+id/btDecline" />
 
     <TextView
         android:id="@+id/textView3"
@@ -65,9 +65,9 @@
         android:text="Aceptar"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewAccept"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewAccept"
-        app:layout_constraintStart_toStartOf="@+id/imageViewAccept"
-        app:layout_constraintTop_toTopOf="@+id/imageViewAccept" />
+        app:layout_constraintBottom_toBottomOf="@+id/btAccept"
+        app:layout_constraintEnd_toEndOf="@+id/btAccept"
+        app:layout_constraintStart_toStartOf="@+id/btAccept"
+        app:layout_constraintTop_toTopOf="@+id/btAccept" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

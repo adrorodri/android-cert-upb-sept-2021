@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui
+package edu.upb.cocinaya.ui.interfaces
 
 interface OnActionCompleteListener {
     fun success()

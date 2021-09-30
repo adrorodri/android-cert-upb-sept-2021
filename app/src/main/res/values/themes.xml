@@ -13,4 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SplashTheme" parent="Theme.CocinaYa">
+        <item name="colorSurface">@color/primary</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSurface</item>
+    </style>
+
+    <style name="LoginTheme" parent="Theme.CocinaYa">
+        <item name="colorSurface">@color/primary</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimarySurface">#FFFFFF</item>
+        <item name="colorOnPrimarySurface">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSurface</item>
+    </style>
+
 </resources>

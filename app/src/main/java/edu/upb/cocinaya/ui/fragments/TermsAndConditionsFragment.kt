@@ -1,0 +1,35 @@
+package edu.upb.cocinaya.ui.fragments
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import edu.upb.cocinaya.R
+import edu.upb.cocinaya.ui.base.StepsBaseFragment
+
+class TermsAndConditionsFragment: StepsBaseFragment() {
+
+    lateinit var btAccept: View
+    lateinit var btDecline: View
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fagment_terms_and_conditions, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btAccept = view.findViewById(R.id.btAccept)
+        btDecline = view.findViewById(R.id.btDecline)
+
+        btAccept.setOnClickListener {
+            onSuccess?.invoke()
+        }
+        btDecline.setOnClickListener {
+            onError?.invoke("User Declined T&C")
+        }
+    }
+}

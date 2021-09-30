@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Basic Colors -->
     <color name="primary">#E35A6B</color>
     <color name="secondary">#5AA5E3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="button_color">#EFEFEF</color>
+    <color name="gray">#404040</color>
+    <color name="almost_black">#242424</color>
+
+    <!-- Specific Colors -->
+    <color name="button_background_color">#EFEFEF</color>
+    <color name="button_foreground_color">#5B5B5B</color>
 </resources>

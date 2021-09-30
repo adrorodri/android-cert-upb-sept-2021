@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui
+package edu.upb.cocinaya.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import edu.upb.cocinaya.R
 
-class TermsAndConditionsFragment: Fragment() {
+class ProfileFragment: Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fagment_terms_and_conditions, container, false)
+    ): View {
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 }

@@ -1,19 +1,16 @@
-package edu.upb.cocinaya.ui
+package edu.upb.cocinaya.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import androidx.fragment.app.Fragment
 import edu.upb.cocinaya.R
+import edu.upb.cocinaya.ui.base.StepsBaseFragment
 
-class LoginOptionsFragment: Fragment() {
+class LoginOptionsFragment: StepsBaseFragment() {
 
-    private var actionCompleteListener: OnActionCompleteListener? = null
-
-    private lateinit var btSignUpEmail: ImageView
+    private lateinit var btSignUpEmail: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,11 +24,7 @@ class LoginOptionsFragment: Fragment() {
         btSignUpEmail = view.findViewById(R.id.btSignUpEmail)
 
         btSignUpEmail.setOnClickListener {
-            actionCompleteListener?.success()
+            onSuccess?.invoke()
         }
-    }
-
-    fun setOnActionCompleteListener(actionListener: OnActionCompleteListener) {
-        actionCompleteListener = actionListener
     }
 }
