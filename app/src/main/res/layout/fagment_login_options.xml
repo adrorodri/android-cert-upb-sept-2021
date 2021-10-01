@@ -38,6 +38,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/btSignUpEmail"
         app:layout_constraintStart_toStartOf="@+id/btSignUpEmail"
         app:layout_constraintTop_toTopOf="@+id/btSignUpEmail"
-        app:srcCompat="@drawable/icons8_email_90" />
+        app:srcCompat="@drawable/ic_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

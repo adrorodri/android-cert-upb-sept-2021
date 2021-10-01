@@ -12,7 +12,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="32dp"
-        android:src="@drawable/icons8_chef_hat_90"
+        android:src="@drawable/ic_chef_hat"
         app:tint="?attr/colorOnSurface"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"

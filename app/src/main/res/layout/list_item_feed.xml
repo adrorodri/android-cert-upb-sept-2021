@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,9 @@
         android:id="@+id/tvPostPublisher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
         app:layout_constraintStart_toStartOf="@+id/ivPostImage"
         app:layout_constraintTop_toBottomOf="@+id/ivPostImage"
@@ -32,8 +34,8 @@
         android:id="@+id/tvPostShortDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
         app:layout_constraintStart_toStartOf="@+id/ivPostImage"
@@ -59,7 +61,29 @@
         android:layout_marginBottom="16dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/ivPostImage"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        tools:text="15 min" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="4dp"
+        android:tint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPostLikes"
         app:layout_constraintEnd_toStartOf="@+id/tvPostLikes"
-        tools:text="15 min"/>
+        app:layout_constraintTop_toTopOf="@+id/tvPostLikes"
+        app:srcCompat="@drawable/ic_like" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="4dp"
+        android:tint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPostTime"
+        app:layout_constraintEnd_toStartOf="@+id/tvPostTime"
+        app:layout_constraintTop_toTopOf="@+id/tvPostTime"
+        app:srcCompat="@drawable/ic_time" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

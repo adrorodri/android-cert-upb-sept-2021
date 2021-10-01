@@ -3,14 +3,14 @@
 
     <item
         android:id="@+id/menuItemProfile"
-        android:icon="@drawable/icons8_test_account_90"
+        android:icon="@drawable/ic_profile"
         android:title="@string/menuItemProfileLabel" />
     <item
         android:id="@+id/menuItemFeed"
-        android:icon="@drawable/icons8_chef_hat_90"
+        android:icon="@drawable/ic_chef_hat"
         android:title="@string/menuItemFeedLabel" />
     <item
         android:id="@+id/menuItemChat"
-        android:icon="@drawable/icons8_chat_bubble_90"
+        android:icon="@drawable/ic_chat"
         android:title="@string/menuItemChatLabel" />
 </menu>
