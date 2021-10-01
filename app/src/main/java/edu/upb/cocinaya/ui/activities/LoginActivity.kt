@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         termsAndConditionsFragment.setOnSuccessListener {
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         termsAndConditionsFragment.setOnErrorListener {
             Toast.makeText(this, "ERROR ${it}", Toast.LENGTH_SHORT).show()
