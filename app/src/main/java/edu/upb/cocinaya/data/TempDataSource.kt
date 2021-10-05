@@ -24,6 +24,20 @@ object TempDataSource {
             imageUrl = "https://www.cocina-ecuatoriana.com/base/stock/Recipe/299-image/299-image_web.jpg",
             time = 120,
             likes = 1000
+        ),
+        Post(
+            publisher = "Roberto Cuevas",
+            shortDescription = "Chicharron de Cerdo",
+            imageUrl = "https://www.cocina-ecuatoriana.com/base/stock/Recipe/299-image/299-image_web.jpg",
+            time = 120,
+            likes = 1000
+        ),
+        Post(
+            publisher = "Roberto Cuevas",
+            shortDescription = "Chicharron de Cerdo",
+            imageUrl = "https://www.cocina-ecuatoriana.com/base/stock/Recipe/299-image/299-image_web.jpg",
+            time = 120,
+            likes = 1000
         )
     )
 }

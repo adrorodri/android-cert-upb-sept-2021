@@ -9,17 +9,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.model.Post
+import edu.upb.cocinaya.ui.interfaces.OnFeedItemClickListener
 
 class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
-    val elementList: MutableList<Post> = mutableListOf()
+    private val elementList: MutableList<Post> = mutableListOf()
+    private var onFeedItemClickListener: ((post: Post) -> Unit)? = null
 
     fun addAll(newElementList: MutableList<Post>) {
         elementList.clear()
         elementList.addAll(newElementList)
         notifyDataSetChanged()
+    }
+
+    fun setOnFeedItemClickListener(onFeedItemClickListener: ((post: Post) -> Unit)?) {
+        this.onFeedItemClickListener = onFeedItemClickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedListViewHolder {
@@ -29,6 +34,9 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
 
     override fun onBindViewHolder(holder: FeedListViewHolder, position: Int) {
         holder.bind(elementList[position])
+        holder.itemView.setOnClickListener {
+            onFeedItemClickListener?.invoke(elementList[position])
+        }
     }
 
     override fun getItemCount(): Int {
@@ -36,7 +44,7 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
     }
 }
 
-class FeedListViewHolder(val itemView: View): RecyclerView.ViewHolder(itemView) {
+class FeedListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val ivPostImage = itemView.findViewById<ImageView>(R.id.ivPostImage)
     private val tvPostPublisher = itemView.findViewById<TextView>(R.id.tvPostPublisher)
     private val tvPostShortDescription = itemView.findViewById<TextView>(R.id.tvPostShortDescription)
