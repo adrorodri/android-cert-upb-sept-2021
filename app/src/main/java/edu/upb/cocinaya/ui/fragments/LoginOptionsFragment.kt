@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.ui.base.StepsBaseFragment
 
@@ -24,7 +25,8 @@ class LoginOptionsFragment: StepsBaseFragment() {
         btSignUpEmail = view.findViewById(R.id.btSignUpEmail)
 
         btSignUpEmail.setOnClickListener {
-            onSuccess?.invoke()
+            val goToTermsAndConditionsDirections = LoginOptionsFragmentDirections.actionGoToTermsAndConditions()
+            findNavController().navigate(goToTermsAndConditionsDirections)
         }
     }
 }

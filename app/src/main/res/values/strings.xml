@@ -5,4 +5,6 @@
     <string name="menuItemProfileLabel">Profile</string>
     <string name="menuItemFeedLabel">Home</string>
     <string name="menuItemChatLabel">Chat</string>
+    <string name="login_error_message">Hubo un error al iniciar sesion, porfavor intenta nuevamente</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.ui.base.StepsBaseFragment
 
@@ -26,10 +27,13 @@ class TermsAndConditionsFragment: StepsBaseFragment() {
         btDecline = view.findViewById(R.id.btDecline)
 
         btAccept.setOnClickListener {
-            onSuccess?.invoke()
+            val goToMainMenuDirections = TermsAndConditionsFragmentDirections.actionGoToMainMenuActivity()
+            findNavController().navigate(goToMainMenuDirections)
+            activity?.finish()
         }
         btDecline.setOnClickListener {
-            onError?.invoke("User Declined T&C")
+            val goToErrorDirections = TermsAndConditionsFragmentDirections.actionGoToError()
+            findNavController().navigate(goToErrorDirections)
         }
     }
 }
