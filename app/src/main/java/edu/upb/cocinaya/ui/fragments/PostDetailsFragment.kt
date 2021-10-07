@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.google.android.material.internal.ViewUtils.dpToPx
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.model.Post
 
@@ -32,6 +33,7 @@ class PostDetailsFragment: Fragment() {
         val ivPostImage = view.findViewById<ImageView>(R.id.ivPostImage)
         val tvPostPublisher = view.findViewById<TextView>(R.id.tvPostPublisher)
         val tvPostShortDescription = view.findViewById<TextView>(R.id.tvPostShortDescription)
+        val tvPostLongDescription = view.findViewById<TextView>(R.id.tvPostLongDescription)
         val tvPostTime = view.findViewById<TextView>(R.id.tvPostTime)
         val tvPostLikes = view.findViewById<TextView>(R.id.tvPostLikes)
 
@@ -45,5 +47,10 @@ class PostDetailsFragment: Fragment() {
         tvPostShortDescription.text = post.shortDescription
         tvPostTime.text = "${post.time} min"
         tvPostLikes.text = "${post.likes}"
+        tvPostLongDescription.text = "${post.longDescription}"
+
+        tvPostLongDescription.setOnClickListener {
+            tvPostLongDescription.maxHeight = dpToPx(400)
+        }
     }
 }

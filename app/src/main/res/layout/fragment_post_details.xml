@@ -100,13 +100,13 @@
         app:layout_constraintGuide_begin="395dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvPostLongDescription"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:maxHeight="50dp"
+        android:text="@string/terms_and_conditions"
         android:textColor="?attr/colorOnSurface"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/tvPostShortDescription" />
