@@ -12,7 +12,11 @@
         tools:layout="@layout/fagment_login_options">
         <action
             android:id="@+id/action_go_to_terms_and_conditions"
-            app:destination="@id/termsAndConditionsFragment" />
+            app:destination="@id/termsAndConditionsFragment"
+            app:enterAnim="@anim/slide_in_from_bottom"
+            app:exitAnim="@anim/slide_out_to_top"
+            app:popEnterAnim="@anim/slide_in_to_top"
+            app:popExitAnim="@anim/slide_out_from_bottom" />
         <action
             android:id="@+id/action_go_to_error"
             app:destination="@id/loginErrorFragment" />
