@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.*
 import com.google.android.material.internal.FlowLayout
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.data.TempDataSource
+import edu.upb.cocinaya.databinding.FragmentFeedBinding
 import edu.upb.cocinaya.model.Post
 import edu.upb.cocinaya.model.User
 import edu.upb.cocinaya.ui.adapters.FeedListAdapter
@@ -18,25 +19,26 @@ import edu.upb.cocinaya.ui.interfaces.OnFeedItemClickListener
 class FeedFragment: Fragment() {
 
     private val feedListAdapter = FeedListAdapter()
+    private lateinit var binding: FragmentFeedBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_feed, container, false)
+        binding = FragmentFeedBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvFeed)
-        recyclerView.adapter = feedListAdapter
+        binding.rvFeed.adapter = feedListAdapter
 
 //        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 //        val layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.layoutManager = layoutManager
+        binding.rvFeed.layoutManager = layoutManager
 
-        LinearSnapHelper().attachToRecyclerView(recyclerView)
+        LinearSnapHelper().attachToRecyclerView(binding.rvFeed)
 
         feedListAdapter.addAll(TempDataSource.postList)
 

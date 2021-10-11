@@ -9,7 +9,7 @@
         android:id="@+id/loginOptionsFragment"
         android:name="edu.upb.cocinaya.ui.fragments.LoginOptionsFragment"
         android:label="LoginOptionsFragment"
-        tools:layout="@layout/fagment_login_options">
+        tools:layout="@layout/fragment_login_options">
         <action
             android:id="@+id/action_go_to_terms_and_conditions"
             app:destination="@id/termsAndConditionsFragment" />
@@ -21,7 +21,7 @@
         android:id="@+id/termsAndConditionsFragment"
         android:name="edu.upb.cocinaya.ui.fragments.TermsAndConditionsFragment"
         android:label="TermsAndConditionsFragment"
-        tools:layout="@layout/fagment_terms_and_conditions" >
+        tools:layout="@layout/fragment_terms_and_conditions" >
         <action
             android:id="@+id/action_go_to_error"
             app:destination="@id/loginErrorFragment" />

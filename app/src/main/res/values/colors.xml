@@ -9,6 +9,7 @@
     <color name="almost_black">#242424</color>
 
     <!-- Specific Colors -->
+    <color name="divisor">#DADADA</color>
     <color name="button_background_color">#EFEFEF</color>
     <color name="button_foreground_color">#5B5B5B</color>
 </resources>

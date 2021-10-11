@@ -10,12 +10,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import edu.upb.cocinaya.R
+import edu.upb.cocinaya.databinding.ListItemFeedBinding
 import edu.upb.cocinaya.model.Post
 import edu.upb.cocinaya.ui.interfaces.OnFeedItemClickListener
 
 class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
     private val elementList: MutableList<Post> = mutableListOf()
     private var onFeedItemClickListener: ((post: Post) -> Unit)? = null
+
+    private lateinit var asd: View
 
     fun addAll(newElementList: MutableList<Post>) {
         elementList.clear()
@@ -28,13 +31,13 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_feed, parent, false)
-        return FeedListViewHolder(view)
+        val binding = ListItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FeedListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: FeedListViewHolder, position: Int) {
         holder.bind(elementList[position])
-        holder.itemView.setOnClickListener {
+        holder.binding.root.setOnClickListener {
             onFeedItemClickListener?.invoke(elementList[position])
         }
     }
@@ -44,21 +47,15 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
     }
 }
 
-class FeedListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    private val ivPostImage = itemView.findViewById<ImageView>(R.id.ivPostImage)
-    private val tvPostPublisher = itemView.findViewById<TextView>(R.id.tvPostPublisher)
-    private val tvPostShortDescription = itemView.findViewById<TextView>(R.id.tvPostShortDescription)
-    private val tvPostTime = itemView.findViewById<TextView>(R.id.tvPostTime)
-    private val tvPostLikes = itemView.findViewById<TextView>(R.id.tvPostLikes)
-
+class FeedListViewHolder(val binding: ListItemFeedBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) {
         Glide.with(itemView)
             .load(post.imageUrl)
             .transform(CenterCrop(),RoundedCorners(24))
-            .into(ivPostImage)
-        tvPostPublisher.text = post.publisher
-        tvPostShortDescription.text = post.shortDescription
-        tvPostTime.text = "${post.time} min"
-        tvPostLikes.text = "${post.likes}"
+            .into(binding.ivPostImage)
+        binding.tvPostPublisher.text = post.publisher
+        binding.tvPostShortDescription.text = post.shortDescription
+        binding.tvPostTime.text = "${post.time} min"
+        binding.tvPostLikes.text = "${post.likes}"
     }
 }

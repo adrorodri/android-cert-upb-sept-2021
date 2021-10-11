@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.ui.base.StepsBaseFragment
@@ -19,7 +18,7 @@ class TermsAndConditionsFragment: StepsBaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fagment_terms_and_conditions, container, false)
+        return inflater.inflate(R.layout.fragment_terms_and_conditions, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
