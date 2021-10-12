@@ -1,89 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout>
+    <data>
+        <variable
+            name="post"
+            type="edu.upb.cocinaya.model.Post" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        <ImageView
+            android:id="@+id/ivPostImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcUrl="@{post.imageUrl}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <TextView
-        android:id="@+id/tvPostPublisher"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
-        app:layout_constraintStart_toStartOf="@+id/ivPostImage"
-        app:layout_constraintTop_toBottomOf="@+id/ivPostImage"
-        tools:text="Andre Machicado" />
+        <TextView
+            android:id="@+id/tvPostPublisher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
+            app:layout_constraintStart_toStartOf="@+id/ivPostImage"
+            app:layout_constraintTop_toBottomOf="@+id/ivPostImage"
+            android:text="@{post.publisher}"
+            tools:text="Andre Machicado" />
 
-    <TextView
-        android:id="@+id/tvPostShortDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
-        app:layout_constraintStart_toStartOf="@+id/ivPostImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvPostPublisher"
-        tools:text="Enchiladas Suizas en Microondas!" />
+        <TextView
+            android:id="@+id/tvPostShortDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
+            app:layout_constraintStart_toStartOf="@+id/ivPostImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvPostPublisher"
+            android:text="@{post.shortDescription}"
+            tools:text="Enchiladas Suizas en Microondas!" />
 
-    <TextView
-        android:id="@+id/tvPostLikes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/ivPostImage"
-        app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
-        tools:text="256" />
+        <TextView
+            android:id="@+id/tvPostLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPostImage"
+            app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
+            android:text="@{String.valueOf(post.likes)}"
+            tools:text="256" />
 
-    <TextView
-        android:id="@+id/tvPostTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tvPostLikes"
-        app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
-        tools:text="15 min" />
+        <TextView
+            android:id="@+id/tvPostTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/tvPostLikes"
+            app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
+            app:textInTimeFormat="@{post.time}"
+            tools:text="15 min" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="4dp"
-        android:tint="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPostLikes"
-        app:layout_constraintEnd_toStartOf="@+id/tvPostLikes"
-        app:layout_constraintTop_toTopOf="@+id/tvPostLikes"
-        app:srcCompat="@drawable/ic_like" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="4dp"
+            app:tint="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPostLikes"
+            app:layout_constraintEnd_toStartOf="@+id/tvPostLikes"
+            app:layout_constraintTop_toTopOf="@+id/tvPostLikes"
+            app:srcCompat="@drawable/ic_like" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="4dp"
-        android:tint="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPostTime"
-        app:layout_constraintEnd_toStartOf="@+id/tvPostTime"
-        app:layout_constraintTop_toTopOf="@+id/tvPostTime"
-        app:srcCompat="@drawable/ic_time" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="4dp"
+            app:tint="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPostTime"
+            app:layout_constraintEnd_toStartOf="@+id/tvPostTime"
+            app:layout_constraintTop_toTopOf="@+id/tvPostTime"
+            app:srcCompat="@drawable/ic_time" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

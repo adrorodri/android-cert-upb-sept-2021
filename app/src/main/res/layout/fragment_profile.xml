@@ -5,11 +5,8 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="user"
-            type="edu.upb.cocinaya.model.User" />
-        <variable
-            name="editModeEnabled"
-            type="Boolean" />
+            name="profileViewModel"
+            type="edu.upb.cocinaya.ui.viewmodels.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +31,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
+            app:srcUrl="@{profileViewModel.user.profilePictureUrl}"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -46,7 +44,21 @@
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/ivProfilePicture"
-            android:text="@{user.firstName + ' ' + user.lastName}"
+            android:text="@{profileViewModel.user.firstName}"
+            android:visibility="@{profileViewModel.editModeEnabled ? View.GONE : View.VISIBLE}"
+            tools:text="Chewbacca" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@={profileViewModel.user.firstName}"
+            android:textSize="24sp"
+            android:visibility="@{profileViewModel.editModeEnabled ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
             tools:text="Chewbacca" />
 
         <View
@@ -58,17 +70,17 @@
             android:background="@color/divisor"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="24dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/tvName"
-            android:layout_margin="24dp"
-            tools:text="Soy un chef con mucha experiencia, mi plato favorito para preparar cereal con leche!"/>
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            tools:text="Soy un chef con mucha experiencia, mi plato favorito para preparar cereal con leche!" />
 
         <ImageView
             android:id="@+id/ivEdit"
@@ -78,7 +90,6 @@
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
-            android:visibility="@{editModeEnabled ? View.INVISIBLE : View.VISIBLE}"
             app:srcCompat="@drawable/icons8_edit_90" />
 
 

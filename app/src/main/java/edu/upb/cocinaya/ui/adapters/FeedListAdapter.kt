@@ -49,13 +49,6 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
 
 class FeedListViewHolder(val binding: ListItemFeedBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) {
-        Glide.with(itemView)
-            .load(post.imageUrl)
-            .transform(CenterCrop(),RoundedCorners(24))
-            .into(binding.ivPostImage)
-        binding.tvPostPublisher.text = post.publisher
-        binding.tvPostShortDescription.text = post.shortDescription
-        binding.tvPostTime.text = "${post.time} min"
-        binding.tvPostLikes.text = "${post.likes}"
+        binding.post = post
     }
 }
