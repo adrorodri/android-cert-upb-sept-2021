@@ -29,7 +29,7 @@
             android:id="@+id/action_go_to_main_menu_activity"
             app:destination="@id/mainMenuActivity" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/loginErrorFragment"
         android:name="edu.upb.cocinaya.ui.login.fragments.loginErrror.LoginErrorFragment"
         android:label="fragment_login_error"
