@@ -1,16 +1,11 @@
-package edu.upb.cocinaya.ui.activities
+package edu.upb.cocinaya.ui.mainmenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.databinding.ActivityMainMenuBinding
-import edu.upb.cocinaya.replaceFragment
-import edu.upb.cocinaya.ui.fragments.ChatFragment
-import edu.upb.cocinaya.ui.fragments.FeedFragment
-import edu.upb.cocinaya.ui.fragments.ProfileFragment
 
 class MainMenuActivity : AppCompatActivity() {
 

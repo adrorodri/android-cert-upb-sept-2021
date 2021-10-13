@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui.activities
+package edu.upb.cocinaya.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -6,7 +6,10 @@
         <import type="android.view.View"/>
         <variable
             name="profileViewModel"
-            type="edu.upb.cocinaya.ui.viewmodels.ProfileViewModel" />
+            type="edu.upb.cocinaya.ui.mainmenu.tabs.profile.ProfileViewModel" />
+        <variable
+            name="userViewModel"
+            type="edu.upb.cocinaya.ui.mainmenu.viewmodels.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +34,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
-            app:srcUrl="@{profileViewModel.user.profilePictureUrl}"
+            app:srcUrl="@{userViewModel.user.profilePictureUrl}"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -44,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/ivProfilePicture"
-            android:text="@{profileViewModel.user.firstName}"
+            android:text="@{userViewModel.user.firstName}"
             android:visibility="@{profileViewModel.editModeEnabled ? View.GONE : View.VISIBLE}"
             tools:text="Chewbacca" />
 
@@ -53,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@={profileViewModel.user.firstName}"
+            android:text="@={userViewModel.user.firstName}"
             android:textSize="24sp"
             android:visibility="@{profileViewModel.editModeEnabled ? View.VISIBLE : View.GONE}"
             app:layout_constraintEnd_toEndOf="@+id/view"

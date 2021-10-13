@@ -1,25 +1,23 @@
-package edu.upb.cocinaya.ui.fragments
+package edu.upb.cocinaya.ui.mainmenu.tabs.feed
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
-import com.google.android.material.internal.FlowLayout
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.data.TempDataSource
 import edu.upb.cocinaya.databinding.FragmentFeedBinding
-import edu.upb.cocinaya.model.Post
-import edu.upb.cocinaya.model.User
-import edu.upb.cocinaya.ui.adapters.FeedListAdapter
-import edu.upb.cocinaya.ui.interfaces.OnFeedItemClickListener
+import edu.upb.cocinaya.ui.mainmenu.viewmodels.UserViewModel
 
 class FeedFragment: Fragment() {
 
     private val feedListAdapter = FeedListAdapter()
     private lateinit var binding: FragmentFeedBinding
+    private val userViewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,11 +40,13 @@ class FeedFragment: Fragment() {
 
         feedListAdapter.addAll(TempDataSource.postList)
 
-
-
         feedListAdapter.setOnFeedItemClickListener {
             val directions = FeedFragmentDirections.actionGoToPostDetails(it)
             findNavController().navigate(directions)
+        }
+
+        userViewModel.user.observe(viewLifecycleOwner) {
+            binding.tvWelcome.text = String.format(resources.getString(R.string.welcome_message), it?.firstName)
         }
     }
 }

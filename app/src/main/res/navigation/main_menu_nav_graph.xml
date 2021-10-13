@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.FeedFragment"
+        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.feed.FeedFragment"
         android:label="FeedFragment"
         tools:layout="@layout/fragment_feed">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/postDetailsFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.PostDetailsFragment"
+        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.profile.PostDetailsFragment"
         android:label="PostDetailsFragment"
         tools:layout="@layout/fragment_post_details">
         <argument
@@ -25,12 +25,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.ProfileFragment"
+        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.ChatFragment"
+        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat"/>
 </navigation>

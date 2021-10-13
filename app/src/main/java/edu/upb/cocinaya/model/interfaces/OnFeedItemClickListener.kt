@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui.interfaces
+package edu.upb.cocinaya.model.interfaces
 
 import edu.upb.cocinaya.model.Post
 

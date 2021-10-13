@@ -1,18 +1,11 @@
-package edu.upb.cocinaya.ui.adapters
+package edu.upb.cocinaya.ui.mainmenu.tabs.feed
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import edu.upb.cocinaya.R
 import edu.upb.cocinaya.databinding.ListItemFeedBinding
 import edu.upb.cocinaya.model.Post
-import edu.upb.cocinaya.ui.interfaces.OnFeedItemClickListener
 
 class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
     private val elementList: MutableList<Post> = mutableListOf()

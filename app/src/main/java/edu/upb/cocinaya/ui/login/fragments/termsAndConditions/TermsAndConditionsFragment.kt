@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui.fragments
+package edu.upb.cocinaya.ui.login.fragments.termsAndConditions
 
 import android.os.Bundle
 import android.view.LayoutInflater

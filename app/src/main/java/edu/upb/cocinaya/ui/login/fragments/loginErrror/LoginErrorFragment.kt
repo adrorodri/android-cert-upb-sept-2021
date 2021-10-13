@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui.fragments
+package edu.upb.cocinaya.ui.login.fragments.loginErrror
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

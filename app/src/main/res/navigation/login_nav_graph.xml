@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginOptionsFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.LoginOptionsFragment"
+        android:name="edu.upb.cocinaya.ui.login.fragments.loginoptions.LoginOptionsFragment"
         android:label="LoginOptionsFragment"
         tools:layout="@layout/fragment_login_options">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.TermsAndConditionsFragment"
+        android:name="edu.upb.cocinaya.ui.login.fragments.termsAndConditions.TermsAndConditionsFragment"
         android:label="TermsAndConditionsFragment"
         tools:layout="@layout/fragment_terms_and_conditions" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginErrorFragment"
-        android:name="edu.upb.cocinaya.ui.fragments.LoginErrorFragment"
+        android:name="edu.upb.cocinaya.ui.login.fragments.loginErrror.LoginErrorFragment"
         android:label="fragment_login_error"
         tools:layout="@layout/fragment_login_error" />
     <activity
         android:id="@+id/mainMenuActivity"
-        android:name="edu.upb.cocinaya.ui.activities.MainMenuActivity"
+        android:name="edu.upb.cocinaya.ui.mainmenu.MainMenuActivity"
         android:label="activity_main_menu"
         tools:layout="@layout/activity_main_menu" />
 </navigation>

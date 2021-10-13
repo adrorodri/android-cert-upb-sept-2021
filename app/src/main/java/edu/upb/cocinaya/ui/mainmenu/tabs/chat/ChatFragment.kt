@@ -1,4 +1,4 @@
-package edu.upb.cocinaya.ui.fragments
+package edu.upb.cocinaya.ui.mainmenu.tabs.chat
 
 import android.os.Bundle
 import android.view.LayoutInflater
