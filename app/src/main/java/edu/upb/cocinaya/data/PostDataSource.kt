@@ -3,18 +3,8 @@ package edu.upb.cocinaya.data
 import edu.upb.cocinaya.model.Post
 import edu.upb.cocinaya.model.User
 
-object TempDataSource {
-    private var user: User? = User("username", "Chewbacca", "", "https://static.wikia.nocookie.net/starwars/images/4/48/Chewbacca_TLJ.png/revision/latest/top-crop/width/360/height/360?cb=20210106001220")
-
-    fun getUser(): User? {
-        return user
-    }
-
-    fun setUser(user: User?) {
-        this.user = user
-    }
-
-    val postList = mutableListOf(
+object PostDataSource {
+    private var postList = mutableListOf(
         Post(
             publisher = "Andre Machicado",
             shortDescription = "Enchiladas Suizas en Microondas!",
@@ -51,4 +41,18 @@ object TempDataSource {
             likes = 1000
         )
     )
+
+    fun getPostList(): List<Post> {
+        return postList
+    }
+
+    fun setPostList(postList: List<Post>) {
+        this.postList = postList.toMutableList()
+    }
+
+    fun searchPosts(query: String): List<Post> {
+        return postList.filter {
+            it.shortDescription.toLowerCase().contains(query.toLowerCase())
+        }
+    }
 }

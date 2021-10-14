@@ -13,7 +13,7 @@ class FeedListAdapter: RecyclerView.Adapter<FeedListViewHolder>() {
 
     private lateinit var asd: View
 
-    fun addAll(newElementList: MutableList<Post>) {
+    fun addAll(newElementList: List<Post>) {
         elementList.clear()
         elementList.addAll(newElementList)
         notifyDataSetChanged()
