@@ -10,9 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
 import edu.upb.cocinaya.R
-import edu.upb.cocinaya.data.UserDataSource
 import edu.upb.cocinaya.databinding.FragmentFeedBinding
-import edu.upb.cocinaya.ui.mainmenu.viewmodels.PostsViewModel
 import edu.upb.cocinaya.ui.mainmenu.viewmodels.UserViewModel
 
 class FeedFragment: Fragment() {
@@ -20,8 +18,7 @@ class FeedFragment: Fragment() {
     private val feedListAdapter = FeedListAdapter()
     private lateinit var binding: FragmentFeedBinding
     private val userViewModel: UserViewModel by activityViewModels()
-    private val postsViewModel: PostsViewModel by activityViewModels()
-    private val feedViewModel: FeedViewModel by viewModels()
+    private val feedViewModel: FeedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,8 +48,9 @@ class FeedFragment: Fragment() {
             binding.tvWelcome.text = String.format(resources.getString(R.string.welcome_message), it?.firstName)
         }
 
-        feedViewModel.filteredPosts.observe(viewLifecycleOwner) {
+        feedViewModel.posts.observe(viewLifecycleOwner) {
             feedListAdapter.addAll(it)
         }
+        feedViewModel.getAllPosts(requireContext())
     }
 }
