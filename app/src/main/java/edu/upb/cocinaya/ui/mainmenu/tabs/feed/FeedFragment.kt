@@ -18,7 +18,7 @@ class FeedFragment: Fragment() {
     private val feedListAdapter = FeedListAdapter()
     private lateinit var binding: FragmentFeedBinding
     private val userViewModel: UserViewModel by activityViewModels()
-    private val feedViewModel: FeedViewModel by activityViewModels()
+    private val feedViewModel: FeedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,6 +51,6 @@ class FeedFragment: Fragment() {
         feedViewModel.posts.observe(viewLifecycleOwner) {
             feedListAdapter.addAll(it)
         }
-        feedViewModel.getAllPosts(requireContext())
+//        feedViewModel.getAllPosts(requireContext())
     }
 }

@@ -73,4 +73,8 @@ dependencies {
     implementation "androidx.room:room-common:$roomVersion"
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.core:core-ktx:$coreVersion"
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
 }

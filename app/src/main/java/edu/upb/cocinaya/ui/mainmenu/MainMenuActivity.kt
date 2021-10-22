@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import edu.upb.cocinaya.NetworkUtils
 import edu.upb.cocinaya.R
 import edu.upb.cocinaya.databinding.ActivityMainMenuBinding
 
@@ -20,5 +21,7 @@ class MainMenuActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        NetworkUtils.updateIsOnline(this)
     }
 }
