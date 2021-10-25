@@ -1,22 +1,22 @@
 package edu.upb.cocinaya.data.feed.persistency
 
+import edu.upb.cocinaya.App
 import edu.upb.cocinaya.model.Post
+import kotlinx.coroutines.flow.Flow
 
 class FeedPersistencyControllerImp: FeedPersistencyController {
-    private var postList: List<Post> = listOf()
+    private val db = App.db
 
-    override fun getAllPosts(): List<Post> {
-        return postList
+    override fun getAllPosts(): Flow<List<Post>> {
+        return db.postsDao().getAllPosts()
     }
 
     override fun savePosts(posts: List<Post>) {
-        postList = posts
+        db.postsDao().saveAllPosts(posts)
     }
 
     override fun searchPosts(query: String): List<Post> {
-        return postList.filter {
-            it.shortDescription.toLowerCase().contains(query.toLowerCase())
-        }
+        return db.postsDao().searchPosts(query)
     }
 
 }

@@ -1,8 +1,12 @@
 package edu.upb.cocinaya.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
-data class Post(val publisher: String,
+@Entity
+data class Post(@PrimaryKey val id: Int,
+                val publisher: String,
                 val shortDescription: String,
                 val imageUrl: String,
                 val time: Long,

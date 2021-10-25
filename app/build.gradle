@@ -70,7 +70,8 @@ dependencies {
     implementation "io.insert-koin:koin-android-viewmodel:$koinVersion"
 
     // Room:
-    implementation "androidx.room:room-common:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.core:core-ktx:$coreVersion"
 

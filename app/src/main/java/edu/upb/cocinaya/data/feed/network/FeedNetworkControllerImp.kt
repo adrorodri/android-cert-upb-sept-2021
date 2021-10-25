@@ -7,7 +7,7 @@ import retrofit2.create
 
 class FeedNetworkControllerImp: FeedNetworkController {
     val client = Retrofit.Builder()
-        .baseUrl("http://10.100.1.16:1880")
+        .baseUrl("http://10.100.1.7:1880")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(FeedAPI::class.java)
