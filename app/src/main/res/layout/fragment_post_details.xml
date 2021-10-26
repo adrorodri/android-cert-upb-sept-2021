@@ -99,6 +99,15 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="395dp" />
 
+    <Button
+        android:id="@+id/btFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
@@ -106,7 +115,7 @@
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textColor="?attr/colorOnSurface"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btFavorite"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/tvPostShortDescription" />

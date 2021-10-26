@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/postDetailsFragment"
-        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.profile.PostDetailsFragment"
+        android:name="edu.upb.cocinaya.ui.mainmenu.tabs.feed.PostDetailsFragment"
         android:label="PostDetailsFragment"
         tools:layout="@layout/fragment_post_details">
         <argument
