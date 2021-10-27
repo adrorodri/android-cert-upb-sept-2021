@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.onEach
 
 class PostDetailsViewModel : ViewModel() {
     private val favoritesRepository = FavoritesRepository(FavoritesPersistenceControllerImp())
-    val favorite = MutableLiveData<Favorite>()
+    val favorite = MutableLiveData<Favorite?>()
 
     fun getFavoriteForPostId(postId: Int) {
         favoritesRepository.getFavoritesForPostId(postId).onEach {
@@ -35,6 +35,6 @@ class PostDetailsViewModel : ViewModel() {
     }
 
     fun deleteFavorite(favorite: Favorite) {
-        favoritesRepository.deleteFavorite(favorite)
+        favoritesRepository.deleteFavorite(favorite).launchIn(CoroutineScope(Dispatchers.IO))
     }
 }

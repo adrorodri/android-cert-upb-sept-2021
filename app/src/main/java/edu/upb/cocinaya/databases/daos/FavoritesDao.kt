@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface FavoritesDao {
     @Query("SELECT * FROM favorite WHERE postId = :postId")
-    fun getFavoriteByPostId(postId: Int): Favorite
+    fun getFavoriteByPostId(postId: Int): Flow<Favorite>
 
     @Query("SELECT * FROM favorite")
     fun getAllFavorites(): List<Favorite>

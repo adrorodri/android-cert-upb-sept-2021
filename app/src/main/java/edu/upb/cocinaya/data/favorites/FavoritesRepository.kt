@@ -7,9 +7,7 @@ import kotlinx.coroutines.flow.flow
 
 class FavoritesRepository(private val persistence: FavoritesPersistenceController) {
     fun getFavoritesForPostId(postId: Int): Flow<Favorite> {
-        return flow {
-            emit(persistence.getFavoritesByPostId(postId))
-        }
+        return persistence.getFavoritesByPostId(postId)
     }
 
     fun getFavorites(): List<Favorite> {
@@ -22,7 +20,9 @@ class FavoritesRepository(private val persistence: FavoritesPersistenceControlle
         }
     }
 
-    fun deleteFavorite(favorite: Favorite) {
-        persistence.deleteFavorite(favorite)
+    fun deleteFavorite(favorite: Favorite): Flow<Any> {
+        return flow {
+            persistence.deleteFavorite(favorite)
+        }
     }
 }

@@ -2,11 +2,12 @@ package edu.upb.cocinaya.data.favorites.persistence
 
 import edu.upb.cocinaya.App
 import edu.upb.cocinaya.model.Favorite
+import kotlinx.coroutines.flow.Flow
 
 class FavoritesPersistenceControllerImp: FavoritesPersistenceController {
     private val db = App.db
 
-    override fun getFavoritesByPostId(postId: Int): Favorite {
+    override fun getFavoritesByPostId(postId: Int): Flow<Favorite> {
         return db.favoritesDao().getFavoriteByPostId(postId)
     }
 
