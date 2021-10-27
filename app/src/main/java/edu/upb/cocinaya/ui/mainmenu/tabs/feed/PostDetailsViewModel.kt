@@ -15,9 +15,10 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.java.KoinJavaComponent.inject
 
 class PostDetailsViewModel : ViewModel() {
-    private val favoritesRepository = FavoritesRepository(FavoritesPersistenceControllerImp())
+    private val favoritesRepository by inject(FavoritesRepository::class.java)
     val favorite = MutableLiveData<Favorite?>()
 
     fun getFavoriteForPostId(postId: Int) {
