@@ -5,6 +5,9 @@ import androidx.room.Room
 import edu.upb.cocinaya.data.favorites.FavoritesRepository
 import edu.upb.cocinaya.data.favorites.persistence.FavoritesPersistenceController
 import edu.upb.cocinaya.data.favorites.persistence.FavoritesPersistenceControllerImp
+import edu.upb.cocinaya.data.user.UserRepository
+import edu.upb.cocinaya.data.user.network.UserNetworkController
+import edu.upb.cocinaya.data.user.network.UserNetworkControllerImp
 import edu.upb.cocinaya.databases.AppDatabase
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -19,6 +22,9 @@ class App: Application() {
     val appModule = module {
         single<FavoritesPersistenceController> { FavoritesPersistenceControllerImp() }
         single { FavoritesRepository(get()) }
+
+        single<UserNetworkController> { UserNetworkControllerImp() }
+        single { UserRepository(get()) }
     }
 
     override fun onCreate() {

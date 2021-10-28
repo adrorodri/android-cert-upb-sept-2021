@@ -11,11 +11,8 @@
         android:label="LoginOptionsFragment"
         tools:layout="@layout/fragment_login_options">
         <action
-            android:id="@+id/action_go_to_terms_and_conditions"
-            app:destination="@id/termsAndConditionsFragment" />
-        <action
-            android:id="@+id/action_go_to_error"
-            app:destination="@id/loginErrorFragment" />
+            android:id="@+id/action_go_to_login_with_email"
+            app:destination="@id/loginWithEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
@@ -39,4 +36,16 @@
         android:name="edu.upb.cocinaya.ui.mainmenu.MainMenuActivity"
         android:label="activity_main_menu"
         tools:layout="@layout/activity_main_menu" />
+    <fragment
+        android:id="@+id/loginWithEmailFragment"
+        android:name="edu.upb.cocinaya.ui.login.fragments.loginoptions.LoginWithEmailFragment"
+        android:label="LoginWithEmailFragment"
+        tools:layout="@layout/fragment_login_with_email">
+        <action
+            android:id="@+id/action_go_to_terms_and_conditions"
+            app:destination="@id/termsAndConditionsFragment" />
+        <action
+            android:id="@+id/action_go_to_error"
+            app:destination="@id/loginErrorFragment" />
+    </fragment>
 </navigation>

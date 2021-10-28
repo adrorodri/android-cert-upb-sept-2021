@@ -22,7 +22,7 @@ class LoginOptionsFragment: StepsBaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btSignUpEmail.setOnClickListener {
-            val goToTermsAndConditionsDirections = LoginOptionsFragmentDirections.actionGoToTermsAndConditions()
+            val goToTermsAndConditionsDirections = LoginOptionsFragmentDirections.actionGoToLoginWithEmail()
             findNavController().navigate(goToTermsAndConditionsDirections)
         }
     }
