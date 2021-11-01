@@ -14,4 +14,8 @@ class LoginWithEmailViewModel: ViewModel() {
     fun login(username: String, password: String): Job {
         return userRepository.login(username, password).launchIn(CoroutineScope(Dispatchers.Main))
     }
+
+    fun register(username: String, password: String): Job {
+        return userRepository.register(username, password).launchIn(CoroutineScope(Dispatchers.Main))
+    }
 }

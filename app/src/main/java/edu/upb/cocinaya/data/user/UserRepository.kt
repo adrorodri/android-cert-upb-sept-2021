@@ -10,4 +10,10 @@ class UserRepository(val network: UserNetworkController) {
             network.login(username, password)
         }
     }
+
+    fun register(username: String, password: String): Flow<Any> {
+        return flow {
+            network.register(username, password)
+        }
+    }
 }

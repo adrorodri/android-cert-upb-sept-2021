@@ -1,7 +1,7 @@
 package edu.upb.cocinaya.data.user.network
 
-import edu.upb.cocinaya.data.feed.network.FeedAPI
 import edu.upb.cocinaya.data.user.model.LoginRequest
+import edu.upb.cocinaya.data.user.model.RegisterRequest
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +14,9 @@ class UserNetworkControllerImp: UserNetworkController {
 
     override suspend fun login(username: String, password: String) {
         return client.login(LoginRequest(username, password))
+    }
+
+    override suspend fun register(username: String, password: String) {
+        return client.register(RegisterRequest(username, password))
     }
 }
