@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_login_error" />
     <activity
         android:id="@+id/mainMenuActivity"
-        android:name="edu.upb.cocinaya.ui.mainmenu.MainMenuActivity"
+        android:name="edu.upb.cocinaya.ui.mainmenucompose.MainActivityCompose"
         android:label="activity_main_menu"
         tools:layout="@layout/activity_main_menu" />
     <fragment
